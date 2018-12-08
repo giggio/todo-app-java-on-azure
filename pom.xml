@@ -30,8 +30,8 @@
         <plugin.azure.webapp.version>0.1.3</plugin.azure.webapp.version>
 
         <!-- configurable properties -->
-        <docker.image.prefix>put-your-docker-registry-url</docker.image.prefix>
-        <azure.app.name>todo-app-${maven.build.timestamp}</azure.app.name>
+        <docker.image.prefix>cregistrydemo.azurecr.io</docker.image.prefix>
+        <azure.app.name>demo-todo-app</azure.app.name>
     </properties>
 
     <dependencyManagement>
@@ -125,6 +125,18 @@
                         <property>
                             <name>PORT</name>
                             <value>8080</value>
+                        </property>
+                        <property>
+                            <name>DOCUMENTDB_URI</name>
+                            <value>${env.DOCUMENTDB_URI}</value>
+                        </property>
+                        <property>
+                            <name>DOCUMENTDB_KEY</name>
+                            <value>${env.DOCUMENTDB_KEY}</value>
+                        </property>
+                        <property>
+                            <name>DOCUMENTDB_DBNAME</name>
+                            <value>${env.DOCUMENTDB_DBNAME}</value>
                         </property>
                     </appSettings>
                 </configuration>
